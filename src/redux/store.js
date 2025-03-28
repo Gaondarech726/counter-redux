@@ -1,30 +1,55 @@
-import { createStore } from "redux";
 
-const initialState = {
-  counter: 0,
-};
+import { configureStore } from '@reduxjs/toolkit'
 
-export const reducer = (state, action) => {
-  switch (action.type) {
-    case "plus":
-      return {
-        counter: state.counter + 1,
-      };
+import {counterReduser} from "./counter/counterReduser"
+import {productReduser} from "./products/productsReduser"
 
-    case "minus":
-      return {
-        counter: state.counter - 1,
-      };
 
-    default:
-      return state;
-  }
-};
+export const store = configureStore({
+  reducer: {
+    counter: counterReducer,
+    products:productsReduser
+  },
+})
 
-// const rootReducer = (state = initialState, action) => {
-//   return state;
+
+
+
+
+
+
+
+
+
+// створення стору на класичному redux
+
+// import { createStore } from "redux";
+
+// const initialState = {
+//   counter: 0,
 // };
 
-export const store = createStore(reducer, initialState);
+// export const reducer = (state, action) => {
+//   switch (action.type) {
+//     case "plus":
+//       return {
+//         counter: state.counter + 1,
+//       };
 
-// {...oldState, ...newState} => {...{counter: 0}, ...{counter: 2}} => отримуємо {counter: 0, counter: 2} => {counter: 2}
+//     case "minus":
+//       return {
+//         counter: state.counter - 1,
+//       };
+
+//     default:
+//       return state;
+//   }
+// };
+
+// // const rootReducer = (state = initialState, action) => {
+// //   return state;
+// // };
+
+// export const store = createStore(reducer, initialState);
+
+// // {...oldState, ...newState} => {...{counter: 0}, ...{counter: 2}} => отримуємо {counter: 0, counter: 2} => {counter: 2}
