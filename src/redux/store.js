@@ -1,25 +1,17 @@
+import { configureStore } from "@reduxjs/toolkit";
 
-import { configureStore } from '@reduxjs/toolkit'
+// import { counterReduser } from "./counter/counterReduser";
+// import { productReduser } from "./products/productsReduser";
 
-import {counterReduser} from "./counter/counterReduser"
-import {productReduser} from "./products/productsReduser"
-
+import { counterReducer } from "../redux/counter/counterSlice";
+// import { productsReducer } from "../redux/products/productsSlice";
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
-    products:productsReduser
+    // products: productsReducer,
   },
-})
-
-
-
-
-
-
-
-
-
+});
 
 // створення стору на класичному redux
 

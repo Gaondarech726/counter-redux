@@ -1,14 +1,14 @@
 import { useDispatch, useSelector } from "react-redux";
-import { minusAction, plusAction } from "./redux/counter/counterAction";
+import { minus, plus } from "./redux/counter/counterAction";
 
 export const App = () => {
   const counterValue = useSelector((state) => state.counter);
   const dispatch = useDispatch();
   const onPlus = () => {
-    dispatch(plusAction());
+    dispatch(plus());
   };
   const onMinus = () => {
-    dispatch(minusAction());
+    dispatch(minus());
   };
   return (
     <>
