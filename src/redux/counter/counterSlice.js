@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const defaultState = {
   test: true,
   x: 5,
+  counter: 0,
 };
 
 const counterSlice = createSlice({
